@@ -1,0 +1,33 @@
+@import 'base';
+.mapBasic {
+}
+@import 'base';
+.mapPinContainer {
+	display: block;
+	position: relative;
+	left: -13px;
+	top: -26px;
+}
+
+.mapPinPoint {
+	height: 14px;
+	width: 14px;
+	border: 7px solid red;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	transform: rotate(45deg);
+	display: block;
+	position: relative;
+	left: 8px;
+	top: -12px;
+}
+
+.mapPinBody {
+	border: 7px solid red;
+	color: transparent;
+	border-radius: 50%;
+	position: relative;
+	width: 26px;
+	height: 26px;
+	left: 2px;
+}
