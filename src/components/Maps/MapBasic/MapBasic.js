@@ -11,9 +11,23 @@ import MapPin from "../MapPin/MapPin"
 	  	}
 	  	constructor(props) {
 	  		super(props);
+	  		this.state = {
+	  			pins: props.pins,
+	  			selected: props.selected
+	  		};
+	  		this.handleMapPinClick = this.handleMapPinClick.bind(this);
 	  	}
+
+	  	handleMapPinClick(event, pinId) {
+	  		event.preventDefault();
+	  		event.stopPropagation();
+	  		this.setState({
+	  			pins: this.state.pins,
+	  			selected: pinId
+	  		});
+	  	}
+
 		render() {
-			
 			return (
 				<div className={classes.mapBasic}>
 					<GoogleMapReact
@@ -21,7 +35,8 @@ import MapPin from "../MapPin/MapPin"
 						defaultCenter={{lat: 40.7446790, lng: -73.9485420}}
 						defaultZoom={ 11 }>
 						{this.props.children}
-						{this.props.pins.map(({lat, lng, key}) => (<MapPin lat={ lat } lng={ lng }/>))}
+						{this.state.pins.map(({lat, lng, key, emphasis}) =>
+							(<MapPin pinId={ key } emphasis={ key === this.state.selected } lat={ lat } lng={ lng } interactionHandler={this.handleMapPinClick}/>))}
 					</GoogleMapReact>
 				</div>
 			)
