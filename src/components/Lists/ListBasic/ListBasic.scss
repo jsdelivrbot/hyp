@@ -1,6 +1,9 @@
 @import 'base';
 
-.selected {
-	background-color: blue !important;
-	color: white;
+.selectedRoot {
+	background-color: $primary !important;
+	
+}
+.selectedLabel {
+	color: $white !important;
 }

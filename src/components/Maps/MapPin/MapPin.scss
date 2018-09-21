@@ -10,7 +10,7 @@
 	height: 14px;
 	width: 14px;
 	border: 7px solid;
-	border-color: blue;
+	border-color: $secondary;
 	border-top-color: transparent !important;
 	border-left-color: transparent !important;
 	transform: rotate(45deg);
@@ -23,7 +23,7 @@
 
 .mapPinBody {
 	border: 7px solid;
-	border-color: blue;
+	border-color: $secondary;
 	color: transparent;
 	border-radius: 50%;
 	position: relative;
@@ -34,6 +34,6 @@
 }
 
 .emphasis {
-	border-color: red;
+	border-color: $primary;
 	z-index: 100;
 }
