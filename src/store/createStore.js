@@ -51,8 +51,22 @@ export default (initialState = {}) => {
     initialState,
     compose(
       applyMiddleware(...middleware),
-      reactReduxFirebase(firebase, rrfConfig),
-      reduxFirestore(firebase),
+      reactReduxFirebase(firebase, { profileParamsToPopulate: [
+          ['role:roles'], // populates user's role with matching role object from roles
+        ],
+      profileFactory: customer => ({
+      email: customer.email || customer.providerData[0].email,
+      role: 'customer',
+      providerData: customer.providerData
+    })}, rrfConfig),
+      reduxFirestore(firebase, { profileParamsToPopulate: [
+          ['role:roles'], // populates user's role with matching role object from roles
+        ],
+      profileFactory: customer => ({
+      email: customer.email || customer.providerData[0].email,
+      role: 'customer',
+      providerData: customer.providerData
+    })}),
       ...enhancers
     )
   )
@@ -70,3 +84,4 @@ export default (initialState = {}) => {
 
   return store
 }
+
