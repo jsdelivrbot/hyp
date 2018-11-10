@@ -2,87 +2,55 @@ import React from 'react'
 import { Link } from 'react-router'
 import { paths } from 'constants'
 import classes from './HomePage.scss'
+import { ListDrivenMap } from '../../../../components/Maps/ListDrivenMap/ListDrivenMap'
+import { EventCard } from '../../../../components/EventCard/EventCard'
+
 const authWrapperUrl = 'https://github.com/mjrussell/redux-auth-wrapper'
 const reactRouterUrl = 'https://github.com/ReactTraining/react-router'
 
-export const Home = () => (
-  <div className={classes.container}>
-    <div className="flex-row-center">
-      <h2>Home Route</h2>
-    </div>
-    <div className="flex-row-center">
-      <div className={classes.section}>
-        <h3>Routing</h3>
-        <span>
-          Redirecting and route protection done using:
-          <div>
-            <span>
-              <a
-                href={reactRouterUrl}
-                target="_blank"
-                rel="noopener noreferrer">
-                react-router
-              </a>
-            </span>
-            <span> and </span>
-            <a href={authWrapperUrl} target="_blank" rel="noopener noreferrer">
-              redux-auth-wrapper
-            </a>
-          </div>
-        </span>
-      </div>
-      <div className={classes.section}>
-        <h4>Logged Out</h4>
-        <span>
-          User is redirected to <pre>/login</pre> if not authenticated and
-          trying to vist:
-        </span>
-        <ul>
-          <li>
-            <Link to={paths.list}>Projects</Link>
-          </li>
-          <li>
-            <Link to={paths.account}>Account</Link>
-          </li>
-        </ul>
-      </div>
-      <div className={classes.section}>
-        <h4>Logged In</h4>
-        <span>
-          User is redirected to <pre>/projects</pre> if authenticated and trying
-          to vist:
-        </span>
-        <ul>
-          <li>
-            <Link to={paths.login}>Login</Link>
-          </li>
-          <li>
-            <Link to={paths.signup}>Signup</Link>
-          </li>
-        </ul>
-      </div>
-      <div className={classes.section}>
-        <div>
-          <h4>Forms</h4>
-          <span>Redirecting and route protection done using:</span>
-          <div>
-            <span>
-              <a
-                href={reactRouterUrl}
-                target="_blank"
-                rel="noopener noreferrer">
-                redux-form
-              </a>
-            </span>
-          </div>
-        </div>
-        <span>The following routes use redux-form:</span>
-        <Link to={paths.account}>
-          <p>Account Page</p>
-        </Link>
-      </div>
-    </div>
-  </div>
-)
+export default function Home () {
 
-export default Home
+	let pins = [];
+	pins.push({
+		lat: 40.715623, 
+		lng: -73.992116,
+		label: 'Cool Party.',
+	    imgPath: 'https://picsum.photos/100?noCache=1'
+	});
+	pins.push({
+		lat: 40.727072,
+		lng: -74.047710,
+		label: 'Eighties Night.',
+    	imgPath: 'https://picsum.photos/100?noCache=2'
+	});
+	pins.push({
+		lat: 40.751524,
+		lng: -73.982164,
+		label: 'Chill Tunes',
+    	imgPath: 'https://picsum.photos/100?noCache=3'
+	});
+	pins.push({
+		lat: 40.754125,
+		lng: -74.041190,
+		label: 'Electric Psychadelic dico func town soul train mayhem with a long title',
+    	imgPath: 'https://picsum.photos/100?noCache=4'
+	});
+	pins.push({
+		lat: 40.712760,
+		lng: -74.003098,
+		label: 'Chill Jazz Night',
+    	imgPath: 'https://picsum.photos/100?noCache=5'
+	});
+	pins.push({
+		lat: 40.713281,
+		lng: -73.965005,
+		label: 'Battle of the Bands',
+    	imgPath: 'https://picsum.photos/100?noCache=6'
+	});
+
+	return (<div className={classes.testSam}>
+		<EventCard classes={{paper:"paper"}} theme={{dir:"ltr"}}></EventCard> 
+
+		
+	</div>);
+}
