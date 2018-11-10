@@ -49,7 +49,7 @@ export default function Home () {
 	});
 
 	return (<div className={classes.testSam}>
-		<EventCard classes={{paper:"paper"}} theme={{dir:"ltr"}}></EventCard> 
+		<ListDrivenMap items={ pins }></ListDrivenMap> 
 
 		
 	</div>);

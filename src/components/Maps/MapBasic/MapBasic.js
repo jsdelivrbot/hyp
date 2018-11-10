@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 import classes from "./MapBasic.scss"
 import MapPin from "../MapPin/MapPin"
+import { maps } from "../../../config"
 
 	export function MapBasic (props) {
 		let centerLat = 0;
@@ -16,7 +17,7 @@ import MapPin from "../MapPin/MapPin"
 		return (
 			<div className={classes.mapBasic}>
 				<GoogleMapReact
-					bootstrapURLKeys={{key: "AIzaSyArsP0UeondXh5Y9Qy9DBPSCsQPu5izHoY"}}
+					bootstrapURLKeys={{key: maps.apiKey}}
 					defaultZoom={ 13 }
 					center={{lat: centerLat, lng: centerLng}}>
 					{props.children}
