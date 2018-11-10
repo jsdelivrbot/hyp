@@ -5,6 +5,10 @@
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
 }
+.fill {
+  height: 100%;
+  width: 100%;
+}
 .flex-column {
   @extend .flex;
   flex-direction: column;

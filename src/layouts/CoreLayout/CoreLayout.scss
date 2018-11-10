@@ -3,12 +3,11 @@
 .container {
   height: 100%;
   /* momentum scrolling */
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
 .children {
-  height: calc(100% - 48px);
-  overflow-y: scroll;
+  height: calc(100% - 64px);
+  //overflow-y: scroll;
   background-color: $background;
 }

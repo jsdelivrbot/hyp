@@ -1,0 +1,13 @@
+@import 'base';
+.ListDrivenMap {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+}
+.Map {
+	flex: 4;
+}
+.List {
+	flex: 1;
+}
